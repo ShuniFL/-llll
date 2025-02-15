@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавить пользователя</title>
+    <style>
+        * {
+            font-family: "Poppins", sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            overflow-y: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #dde5f4;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .screen-1 {
+            background: #f1f7fe;
+            padding: 2em 3em;
+            display: flex;
+            flex-direction: column;
+            border-radius: 30px;
+            box-shadow: 0 0 2em #e6e9f9;
+            gap: 2em;
+            width: 400px; /* Устанавливаем фиксированную ширину */
+        }
+
+        .screen-1 h2 {
+            text-align: center;
+            color: #3e4684; /* Цвет заголовка */
+        }
+
+        .input-group {
+            background: white;
+            box-shadow: 0 0 2em #e6e9f9;
+            padding: 1em;
+            border-radius: 20px;
+        }
+
+        .input-group label {
+            margin-bottom: 0.5em;
+            color: #4d4d4d; /* Цвет текста метки */
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 0.5em; /* Добавляем отступы */
+            border-radius: 10px; /* Закругленные углы */
+            border: none;
+            outline: none; /* Убираем обводку */
+        }
+
+        .input-group input::placeholder {
+            color: #999; /* Цвет плейсхолдера */
+        }
+
+        .login {
+            padding: 1em;
+            background: #3e4684; /* Цвет кнопки */
+            color: white; /* Цвет текста кнопки */
+            border: none;
+            border-radius: 30px; /* Закругленные углы кнопки */
+            font-weight: bold; /* Жирный шрифт */
+            cursor: pointer; /* Курсор указателя */
+        }
+
+        .footer {
+            text-align: center; /* Центрируем текст */
+        }
+
+        .footer a {
+            color: #3e4684; /* Цвет ссылки */
+            text-decoration: none; /* Убираем подчеркивание */
+        }
+
+        .footer a:hover {
+            text-decoration: underline; /* Подчеркивание при наведении */
+        }
+    </style>
+</head>
+<body>
+<div class="screen-1">
+    <h2>Добавить пользователя</h2>
+    <form action="{{ url_for('add_user') }}" method="post">
+        <div class="input-group">
+            <label for="username">Логин</label>
+            <input type="text" name="username" placeholder="Введите имя пользователя" required />
+        </div>
+        <div class="input-group">
+            <label for="password">Пароль</label>
+            <input type="password" name="password" placeholder="Введите пароль" required />
+        </div>
+        <button class="login">Добавить пользователя</button>
+    </form>
+    <div class="footer">
+        <a href="{{ url_for('admin') }}">Назад к панели администратора</a>
+    </div>
+</div>
+</body>
+</html>

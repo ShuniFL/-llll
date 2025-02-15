@@ -1,0 +1,21 @@
+<!-- templates/admin.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+</head>
+<body>
+    <h1>Admin Panel</h1>
+
+    <!-- Link to Add User Page -->
+    <a href="{{ url_for('add_user') }}">Добавить пользователя</a>
+
+    <!-- Other admin functionalities can be added here -->
+
+    <form action="{{ url_for('admin_logout') }}" method="POST">
+        <button type="submit">Logout</button>
+    </form>
+</body>
+</html>

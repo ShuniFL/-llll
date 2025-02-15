@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Генератор Этикеток</title>
+    <style>
+        * {
+            font-family: "Poppins", Arial, sans-serif;
+        }
+
+        body {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            overflow-y: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #dde5f4;
+            height: 100vh;
+            margin: 0; /* Reset margin for body */
+        }
+
+        .container {
+            background-color: #f1f7fe;
+            padding: 30px;
+            border-radius: 30px;
+            box-shadow: 0 0 2em #e6e9f9;
+            max-width: 500px;
+            width: 100%; /* Ensure responsiveness */
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="file"],
+        input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc; /* Adjusted for uniformity */
+            border-radius: 20px; /* Match the original style */
+            background-color: white; /* Ensure input background is white */
+            box-shadow: 0 0 2em #e6e9f9; /* Match original input style */
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #3e4684; /* Original button color */
+            color: white;
+            border: none;
+            border-radius: 30px; /* Match the original style */
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #4CAF50; /* Change hover color to green */
+        }
+
+        .flash {
+            color: red;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Генератор Этикеток</h1>
+
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <label for="file">Выберите Excel файл (.xlsx):</label>
+            <input type="file" name="file" id="file" accept=".xlsx" required>
+            
+            <label for="seller_name">Имя продавца:</label>
+            <input type="text" name="seller_name" id="seller_name" required>
+
+            <button type="submit">Сгенерировать Этикетки</button>
+        </form>
+    </div>
+</body>
+</html>
