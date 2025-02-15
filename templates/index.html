@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(98633501, "init", {
+         clickmap:true,
+         trackLinks:true,
+         accurateTrackBounce:true,
+         webvisor:true
+    });
+ </script>
+ <noscript><div><img src="https://mc.yandex.ru/watch/98633501" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+ <!-- /Yandex.Metrika counter -->
+
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Генератор этикеток WB / OZON </title>
+     <title>{{name}}</title>
+     <style>
+         body {
+             font-family: Arial, sans-serif;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             height: 100vh;
+             margin: 0;
+             background-color: #dde5f4; /* Solid green color */
+         }
+
+         .container {
+             background-color: rgba(255, 255, 255, 0.8);
+             padding: 2em;
+             border-radius: 10px;
+             box-shadow: 0 0 10px rgba(0,0,0,0.1);
+             text-align: center;
+         }
+
+         h1 {
+             color: #333;
+             margin-bottom: 1em;
+         }
+
+         form {
+             display: flex;
+             flex-direction: column;
+             align-items: center;
+         }
+
+         label {
+             margin-top: 1em;
+         }
+
+         input[type="text"], input[type="number"] {
+             width: 100%;
+             padding: 0.5em;
+             margin-top: 0.5em;
+         }
+
+         input[type="submit"] {
+             margin-top: 1em;
+             padding: 0.5em 1em;
+             background-color: #4CAF50;
+             color: white;
+             border: none;
+             border-radius: 4px;
+             cursor: pointer;
+         }
+
+         input[type="submit"]:hover {
+             background-color: #45a049;
+         }
+
+         .excel-button {
+            margin-top: 1em;
+             padding: 0.5em 1em;
+             background-color: #1a73e8;
+             color: white;
+             border: none;
+             border-radius: 4px;
+             cursor: pointer;
+         }
+
+         .excel-button:hover {
+             background-color: #165fbb;
+         }
+     </style>
+ </head>
+ <body>
+     <div class="container">
+         <h1>Генератор этикеток WB</h1>
+         <form action="/generate" method="post">
+             <label for="barcode">Баркод</label>
+             <input type="text" id="barcode" name="barcode" required>
+             
+             <label for="article">Артикул</label>
+             <input type="text" id="article" name="article" required>
+             
+             <label for="seller">Название продавца</label>
+             <input type="text" id="seller" name="seller" value="ИП Хасандинова Х.М" required>
+             
+             <label for="color">Цвет</label>
+             <input type="text" id="color" name="color" required>
+             
+             <label for="size">Размер</label>
+             <input type="text" id="size" name="size" required>
+             
+             <label for="product_name">Название товара</label>
+             <input type="text" id="product_name" name="product_name" required>
+ 
+             <label for="quantity">Количество</label>
+             <input type="number" id="quantity" name="quantity" required>
+
+             <label>
+                 <input type="checkbox" name="use_qrcode" value="yes"> Использовать QR-код
+             </label>
+ 
+             <input type="submit" value="Создать этикетку">         <!-- New Excel Generator Button -->
+             <a href="/upload" class="excel-button">Генератор через Excel</a>
+
+         </form>
+
+
+     </div>
+ </body>
+</html>
